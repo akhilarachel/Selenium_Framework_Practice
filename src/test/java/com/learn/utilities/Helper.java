@@ -17,7 +17,7 @@ public class Helper {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(src, new File(screenshotLocation));
         }catch (Exception e){
-            System.out.println("Screenshot can't be capture: "+e.getMessage());
+            System.out.println("Screenshot can't be captured: "+e.getMessage());
         }
         return screenshotLocation;
     }

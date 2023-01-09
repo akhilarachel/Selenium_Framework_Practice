@@ -3,7 +3,7 @@
 <suite name="SauceDemo Application Testing" verbose="1" >
     <test name="SauceDemo Test Package" >
         <classes>
-            <class name="com.learn.testcases.LoginTest" />
+            <class name="com.learn.testcases.LoginTest"/>
         </classes>
     </test>
 

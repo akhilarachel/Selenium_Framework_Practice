@@ -13,10 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,11 +39,13 @@ public class BaseClass {
         Reporter.log("Test can be started" , true);
     }
 
+    @Parameters({"browser","url"})
     @BeforeClass
-    public void setUp(){
+    public void setUp(String browser, String url){
         Reporter.log("Launching the application" , true);
-        driver = bs.openBrowser(configReader.getBrowserValue(), configReader.getTestUrl());
-        Helper.getScreenshot(driver);
+        //driver = bs.openBrowser(configReader.getBrowserValue(), configReader.getTestUrl());
+        driver = bs.openBrowser(browser, url);
+        //Helper.getScreenshot(driver);
         Assert.assertTrue(driver.findElement(By.id("login-button")).isDisplayed());
         Reporter.log("Login is successful" , true);
     }
