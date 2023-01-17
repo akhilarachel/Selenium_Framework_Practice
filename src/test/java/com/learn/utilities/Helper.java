@@ -15,7 +15,9 @@ public class Helper {
         String screenshotLocation = System.getProperty("user.dir")+"/Screenshots/picture_"+getRandomValue()+".png";
         try {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            System.out.println("Screenshot captured");
             FileUtils.copyFile(src, new File(screenshotLocation));
+            System.out.println("Screenshot saved at "+screenshotLocation);
         }catch (Exception e){
             System.out.println("Screenshot can't be captured: "+e.getMessage());
         }
